@@ -389,7 +389,6 @@ namespace Steganography
             Helper temp = new Helper();
             temp.Show();
             temp.Helping.LoadFile("Helper/Help2.rtf");
-            Hide();
         }
     
 

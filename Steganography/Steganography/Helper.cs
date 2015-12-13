@@ -16,5 +16,10 @@ namespace Steganography
         {
             InitializeComponent();
         }
+
+        private void Helper_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Hide();
+        }
     }
 }

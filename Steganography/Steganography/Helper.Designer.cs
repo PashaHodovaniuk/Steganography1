@@ -36,7 +36,7 @@
             this.Helping.Location = new System.Drawing.Point(0, 0);
             this.Helping.Name = "Helping";
             this.Helping.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.Helping.Size = new System.Drawing.Size(954, 498);
+            this.Helping.Size = new System.Drawing.Size(598, 498);
             this.Helping.TabIndex = 0;
             this.Helping.Text = "";
             // 
@@ -44,12 +44,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 498);
+            this.ClientSize = new System.Drawing.Size(599, 498);
             this.Controls.Add(this.Helping);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Helper";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Helper";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Helper_FormClosed);
             this.ResumeLayout(false);
 
         }
