@@ -53,8 +53,9 @@ namespace Steganography
                         using (myStream)
                         {
                             rFile = openFileDialog1.FileName.ToString();
+                            
                             bPic = new Bitmap(rFile);
-                            Img.Image = bPic;
+                            Img.ImageLocation = rFile;
                             FileInfo file = new FileInfo(openFileDialog1.FileName);
                             double size = file.Length / 1024;
                             StartSize.Text = size.ToString() + " KB";
@@ -92,8 +93,9 @@ namespace Steganography
 
         private void SaveKey_Click(object sender, EventArgs e)
         {
+            
 
-            saveFileDialog1.Filter = "Key files(*.key)|*.key";
+            saveFileDialog1.Filter = "Key files(*.txt)|*.txt";
             saveFileDialog1.FileName = "Key";
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -107,13 +109,13 @@ namespace Steganography
         }
 
         private void SaveImg_Click(object sender, EventArgs e)
-        {
+        {   
             saveFileDialog1.Filter = "BMP files(*.bmp)|*.bmp";
             saveFileDialog1.FileName = "";
             saveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                bPic.Save(saveFileDialog1.FileName);
+                bPic.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Bmp);
                 FileInfo file = new FileInfo(saveFileDialog1.FileName);
                 double size = file.Length / 1024;
                 EndSize.Text = size.ToString() + " KB";
@@ -180,7 +182,7 @@ namespace Steganography
 
             int index = 0;
             int height = 0;
-            int width = 4;            
+            int width = 1;            
             bool flag = true;
             while (flag)
             {
@@ -213,7 +215,7 @@ namespace Steganography
                 bPic.SetPixel(width, height, newColor);
 
                 if (bList[index] == 0)
-                    height++;
+                    height+=4;
                 else
                 {
                     height += bList[index];

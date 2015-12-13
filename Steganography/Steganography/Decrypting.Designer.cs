@@ -69,6 +69,7 @@
             this.OpenImg.TabIndex = 2;
             this.OpenImg.Text = "Открыть картинку";
             this.OpenImg.UseVisualStyleBackColor = true;
+            this.OpenImg.Click += new System.EventHandler(this.OpenImg_Click);
             // 
             // Key
             // 
@@ -103,6 +104,7 @@
             this.OpenKey.Text = "Загрузить ключ";
             this.OpenKey.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.OpenKey.UseVisualStyleBackColor = true;
+            this.OpenKey.Click += new System.EventHandler(this.OpenKey_Click);
             // 
             // Decrypt
             // 
@@ -115,6 +117,7 @@
             this.Decrypt.TabIndex = 10;
             this.Decrypt.Text = "Дешифровка";
             this.Decrypt.UseVisualStyleBackColor = false;
+            this.Decrypt.Click += new System.EventHandler(this.Decrypt_Click);
             // 
             // TextEncr
             // 
