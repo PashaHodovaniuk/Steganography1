@@ -234,6 +234,14 @@ namespace Steganography
             string m = Encoding.GetEncoding(1251).GetString(rez);
             return Convert.ToInt32(m, 10);
         }
+
+        private void Help2_Click(object sender, EventArgs e)
+        {
+            Helper temp = new Helper();
+            temp.Show();
+            temp.Helping.LoadFile("Helper/Help3.rtf");
+            Hide();
+        }
     }
 
     class dvernama

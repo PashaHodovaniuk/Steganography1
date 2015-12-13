@@ -9,3 +9,4 @@ J:\OOPKP\Steganography\Steganography\obj\Debug\Steganography.exe
 J:\OOPKP\Steganography\Steganography\obj\Debug\Steganography.pdb
 J:\OOPKP\Steganography\Steganography\obj\Debug\Steganography.Encrypting.resources
 J:\OOPKP\Steganography\Steganography\obj\Debug\Steganography.Decrypting.resources
+J:\OOPKP\Steganography\Steganography\obj\Debug\Steganography.Helper.resources

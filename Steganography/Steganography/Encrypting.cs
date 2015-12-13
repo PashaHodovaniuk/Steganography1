@@ -20,7 +20,6 @@ namespace Steganography
         }
 
         bool flagkey = false;
-        bool flagimg = false;
         string rFile;
         Bitmap bPic;
         string aText = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя+-*/.,?!()\" :;=0123456789";
@@ -138,7 +137,6 @@ namespace Steganography
                 EndSize.Text = size.ToString() + " KB";
                 return;
             }
-            flagimg = true;
             if (!flagkey)
             {
                 MessageBox.Show("Небыл сохранён ключ, сохрание пожалуйста!", "Оповещение", MessageBoxButtons.OK);
@@ -384,6 +382,14 @@ namespace Steganography
                 string encrypt = pad.Crypt(text, key, true);
                 Steganohrap(encrypt);
             } 
+        }
+
+        private void Help1_Click(object sender, EventArgs e)
+        {
+            Helper temp = new Helper();
+            temp.Show();
+            temp.Helping.LoadFile("Helper/Help2.rtf");
+            Hide();
         }
     
 

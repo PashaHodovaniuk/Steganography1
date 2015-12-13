@@ -271,6 +271,7 @@
             this.Help1.Location = new System.Drawing.Point(952, 1);
             this.Help1.Name = "Help1";
             this.Help1.Size = new System.Drawing.Size(39, 33);
+            this.Help1.Click += new System.EventHandler(this.Help1_Click);
             // 
             // shapeContainer1
             // 

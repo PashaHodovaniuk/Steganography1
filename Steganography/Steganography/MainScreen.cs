@@ -35,5 +35,13 @@ namespace Steganography
         {
             Environment.Exit(0);
         }
+
+        private void Help_Click(object sender, EventArgs e)
+        {
+            Helper temp = new Helper();
+            temp.Show();
+            temp.Helping.LoadFile("Helper/Help1.rtf");
+            Hide();
+        }
     }
 }

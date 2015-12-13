@@ -54,6 +54,7 @@
             this.Help.Location = new System.Drawing.Point(833, 2);
             this.Help.Name = "Help";
             this.Help.Size = new System.Drawing.Size(39, 34);
+            this.Help.Click += new System.EventHandler(this.Help_Click);
             // 
             // label1
             // 
