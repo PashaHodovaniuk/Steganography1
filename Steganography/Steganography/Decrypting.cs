@@ -16,5 +16,22 @@ namespace Steganography
         {
             InitializeComponent();
         }
+
+        private void MainScreenbut_Click(object sender, EventArgs e)
+        {
+            MainScreen temp = new MainScreen();
+            temp.Show();
+            Hide();
+        }
+
+        private void Exiting_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void Decrypting_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

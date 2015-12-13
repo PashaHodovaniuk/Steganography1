@@ -37,7 +37,9 @@
             this.TextEncr = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Exiting = new System.Windows.Forms.Button();
-            this.MainScreen = new System.Windows.Forms.Button();
+            this.MainScreenbut = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.Img)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,18 +149,24 @@
             this.Exiting.TabIndex = 14;
             this.Exiting.Text = "Завершение";
             this.Exiting.UseVisualStyleBackColor = false;
+            this.Exiting.Click += new System.EventHandler(this.Exiting_Click);
             // 
-            // MainScreen
+            // MainScreenbut
             // 
-            this.MainScreen.BackColor = System.Drawing.Color.Transparent;
-            this.MainScreen.Font = new System.Drawing.Font("Times New Roman", 15F);
-            this.MainScreen.ForeColor = System.Drawing.Color.SeaGreen;
-            this.MainScreen.Location = new System.Drawing.Point(683, 429);
-            this.MainScreen.Name = "MainScreen";
-            this.MainScreen.Size = new System.Drawing.Size(150, 40);
-            this.MainScreen.TabIndex = 13;
-            this.MainScreen.Text = "Главное меню";
-            this.MainScreen.UseVisualStyleBackColor = false;
+            this.MainScreenbut.BackColor = System.Drawing.Color.Transparent;
+            this.MainScreenbut.Font = new System.Drawing.Font("Times New Roman", 15F);
+            this.MainScreenbut.ForeColor = System.Drawing.Color.SeaGreen;
+            this.MainScreenbut.Location = new System.Drawing.Point(683, 429);
+            this.MainScreenbut.Name = "MainScreenbut";
+            this.MainScreenbut.Size = new System.Drawing.Size(150, 40);
+            this.MainScreenbut.TabIndex = 13;
+            this.MainScreenbut.Text = "Главное меню";
+            this.MainScreenbut.UseVisualStyleBackColor = false;
+            this.MainScreenbut.Click += new System.EventHandler(this.MainScreenbut_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Decrypting
             // 
@@ -168,7 +176,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(995, 567);
             this.Controls.Add(this.Exiting);
-            this.Controls.Add(this.MainScreen);
+            this.Controls.Add(this.MainScreenbut);
             this.Controls.Add(this.TextEncr);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Decrypt);
@@ -181,6 +189,7 @@
             this.Name = "Decrypting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Дешифровка";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Decrypting_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.Img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -198,6 +207,8 @@
         private System.Windows.Forms.TextBox TextEncr;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Exiting;
-        private System.Windows.Forms.Button MainScreen;
+        private System.Windows.Forms.Button MainScreenbut;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

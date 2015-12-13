@@ -40,7 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.SaveImg = new System.Windows.Forms.Button();
             this.Exiting = new System.Windows.Forms.Button();
-            this.MainScreen = new System.Windows.Forms.Button();
+            this.MainScreenBut = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.StartSize = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,6 +48,8 @@
             this.Help1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.Img)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +79,7 @@
             this.OpenImg.TabIndex = 1;
             this.OpenImg.Text = "Открыть картинку";
             this.OpenImg.UseVisualStyleBackColor = true;
+            this.OpenImg.Click += new System.EventHandler(this.OpenImg_Click);
             // 
             // label1
             // 
@@ -99,6 +102,7 @@
             this.TextEncr.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TextEncr.Size = new System.Drawing.Size(304, 106);
             this.TextEncr.TabIndex = 3;
+            this.TextEncr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextEncr_KeyPress);
             // 
             // AutoKey
             // 
@@ -114,6 +118,7 @@
             this.AutoKey.Text = "Генерация ключа";
             this.AutoKey.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.AutoKey.UseVisualStyleBackColor = true;
+            this.AutoKey.Click += new System.EventHandler(this.AutoKey_Click);
             // 
             // label2
             // 
@@ -131,6 +136,7 @@
             // 
             this.Key.Location = new System.Drawing.Point(681, 306);
             this.Key.Name = "Key";
+            this.Key.ReadOnly = true;
             this.Key.Size = new System.Drawing.Size(304, 20);
             this.Key.TabIndex = 6;
             // 
@@ -145,6 +151,7 @@
             this.ClearKey.TabIndex = 7;
             this.ClearKey.Text = "Очистить ключ";
             this.ClearKey.UseVisualStyleBackColor = false;
+            this.ClearKey.Click += new System.EventHandler(this.ClearKey_Click);
             // 
             // SaveKey
             // 
@@ -157,6 +164,7 @@
             this.SaveKey.TabIndex = 8;
             this.SaveKey.Text = "Сохранить ключ";
             this.SaveKey.UseVisualStyleBackColor = false;
+            this.SaveKey.Click += new System.EventHandler(this.SaveKey_Click);
             // 
             // button1
             // 
@@ -169,6 +177,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Шифровка";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SaveImg
             // 
@@ -181,6 +190,7 @@
             this.SaveImg.TabIndex = 10;
             this.SaveImg.Text = "Сохранить картинку";
             this.SaveImg.UseVisualStyleBackColor = false;
+            this.SaveImg.Click += new System.EventHandler(this.SaveImg_Click);
             // 
             // Exiting
             // 
@@ -193,18 +203,20 @@
             this.Exiting.TabIndex = 12;
             this.Exiting.Text = "Завершение";
             this.Exiting.UseVisualStyleBackColor = false;
+            this.Exiting.Click += new System.EventHandler(this.Exiting_Click);
             // 
-            // MainScreen
+            // MainScreenBut
             // 
-            this.MainScreen.BackColor = System.Drawing.Color.Transparent;
-            this.MainScreen.Font = new System.Drawing.Font("Times New Roman", 15F);
-            this.MainScreen.ForeColor = System.Drawing.Color.SeaGreen;
-            this.MainScreen.Location = new System.Drawing.Point(681, 493);
-            this.MainScreen.Name = "MainScreen";
-            this.MainScreen.Size = new System.Drawing.Size(150, 40);
-            this.MainScreen.TabIndex = 11;
-            this.MainScreen.Text = "Главное меню";
-            this.MainScreen.UseVisualStyleBackColor = false;
+            this.MainScreenBut.BackColor = System.Drawing.Color.Transparent;
+            this.MainScreenBut.Font = new System.Drawing.Font("Times New Roman", 15F);
+            this.MainScreenBut.ForeColor = System.Drawing.Color.SeaGreen;
+            this.MainScreenBut.Location = new System.Drawing.Point(681, 493);
+            this.MainScreenBut.Name = "MainScreenBut";
+            this.MainScreenBut.Size = new System.Drawing.Size(150, 40);
+            this.MainScreenBut.TabIndex = 11;
+            this.MainScreenBut.Text = "Главное меню";
+            this.MainScreenBut.UseVisualStyleBackColor = false;
+            this.MainScreenBut.Click += new System.EventHandler(this.MainScreenBut_Click);
             // 
             // label3
             // 
@@ -221,6 +233,7 @@
             // StartSize
             // 
             this.StartSize.AutoSize = true;
+            this.StartSize.BackColor = System.Drawing.Color.Transparent;
             this.StartSize.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StartSize.ForeColor = System.Drawing.Color.Red;
             this.StartSize.Location = new System.Drawing.Point(272, 18);
@@ -234,7 +247,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(317, 18);
+            this.label5.Location = new System.Drawing.Point(353, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 22);
             this.label5.TabIndex = 15;
@@ -246,7 +259,7 @@
             this.EndSize.BackColor = System.Drawing.Color.Transparent;
             this.EndSize.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EndSize.ForeColor = System.Drawing.Color.Red;
-            this.EndSize.Location = new System.Drawing.Point(391, 18);
+            this.EndSize.Location = new System.Drawing.Point(421, 18);
             this.EndSize.Name = "EndSize";
             this.EndSize.Size = new System.Drawing.Size(0, 22);
             this.EndSize.TabIndex = 16;
@@ -281,6 +294,11 @@
             this.ovalShape1.Name = "ovalShape1";
             this.ovalShape1.Size = new System.Drawing.Size(34, 29);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "BMP files|*.bmp";
+            this.openFileDialog1.Title = "Пожалуйста выберите картинку для шифровки";
+            // 
             // Encrypting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,7 +311,7 @@
             this.Controls.Add(this.StartSize);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Exiting);
-            this.Controls.Add(this.MainScreen);
+            this.Controls.Add(this.MainScreenBut);
             this.Controls.Add(this.SaveImg);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.SaveKey);
@@ -310,6 +328,7 @@
             this.Name = "Encrypting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Шифровка";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Encrypting_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.Img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -330,7 +349,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button SaveImg;
         private System.Windows.Forms.Button Exiting;
-        private System.Windows.Forms.Button MainScreen;
+        private System.Windows.Forms.Button MainScreenBut;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label StartSize;
         private System.Windows.Forms.Label label5;
@@ -338,5 +357,7 @@
         private Microsoft.VisualBasic.PowerPacks.OvalShape Help1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
