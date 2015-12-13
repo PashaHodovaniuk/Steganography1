@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.Help1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.Help = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.label1 = new System.Windows.Forms.Label();
             this.Encrypting1 = new System.Windows.Forms.Label();
             this.Decrypting1 = new System.Windows.Forms.Label();
@@ -41,19 +41,19 @@
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.Help1});
+            this.Help});
             this.shapeContainer1.Size = new System.Drawing.Size(874, 577);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
             // 
-            // Help1
+            // Help
             // 
-            this.Help1.BackgroundImage = global::Steganography.Properties.Resources.help;
-            this.Help1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Help1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Help1.Location = new System.Drawing.Point(833, 2);
-            this.Help1.Name = "Help1";
-            this.Help1.Size = new System.Drawing.Size(39, 34);
+            this.Help.BackgroundImage = global::Steganography.Properties.Resources.help;
+            this.Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Help.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Help.Location = new System.Drawing.Point(833, 2);
+            this.Help.Name = "Help";
+            this.Help.Size = new System.Drawing.Size(39, 34);
             // 
             // label1
             // 
@@ -119,7 +119,7 @@
         #endregion
 
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape Help1;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape Help;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Encrypting1;
         private System.Windows.Forms.Label Decrypting1;

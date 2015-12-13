@@ -19,14 +19,17 @@ namespace Steganography
             InitializeComponent();
         }
 
+        bool flagkey = false;
+        bool flagimg = false;
         string rFile;
         Bitmap bPic;
         string aText = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя+-*/.,?!()\" :;=0123456789";
 
         private void MainScreenBut_Click(object sender, EventArgs e)
         {
-            MainScreen temp = new MainScreen();
-            temp.Show();
+
+            MainScreen temp2 = new MainScreen();
+            temp2.Show();
             Hide();
         }
 
@@ -82,8 +85,16 @@ namespace Steganography
 
         private void AutoKey_Click(object sender, EventArgs e)
         {
-            var temp = new vernama(aText);
-            Key.Text = temp.Gener(TextEncr.Text);
+            if (TextEncr.Text != "")
+            {
+                var temp = new vernama(aText);
+                Key.Text = temp.Gener(TextEncr.Text);
+            }
+            else
+            {
+                MessageBox.Show("Вы не ввели сообщени!","Оповещение", MessageBoxButtons.OK);
+                TextEncr.Focus();
+            }
         }
 
         private void ClearKey_Click(object sender, EventArgs e)
@@ -93,18 +104,24 @@ namespace Steganography
 
         private void SaveKey_Click(object sender, EventArgs e)
         {
-            
-
-            saveFileDialog1.Filter = "Key files(*.txt)|*.txt";
-            saveFileDialog1.FileName = "Key";
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (Key.Text != "")
             {
-                using (StreamWriter sw = new StreamWriter(saveFileDialog1.OpenFile(), System.Text.Encoding.Default))
+                saveFileDialog1.Filter = "Key files(*.txt)|*.txt";
+                saveFileDialog1.FileName = "Key";
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    sw.Write(Key.Text);
-                    sw.Close();
+                    using (StreamWriter sw = new StreamWriter(saveFileDialog1.OpenFile(), System.Text.Encoding.Default))
+                    {
+                        sw.Write(Key.Text);
+                        sw.Close();
+                    }
                 }
+                flagkey = true;
+            }
+            else
+            {
+                MessageBox.Show("Вы не сгенерировали ключ","Оповищение", MessageBoxButtons.OK);
             }
         }
 
@@ -120,19 +137,16 @@ namespace Steganography
                 double size = file.Length / 1024;
                 EndSize.Text = size.ToString() + " KB";
                 return;
-            }            
+            }
+            flagimg = true;
+            if (!flagkey)
+            {
+                MessageBox.Show("Небыл сохранён ключ, сохрание пожалуйста!", "Оповещение", MessageBoxButtons.OK);
+                AutoKey_Click(sender, e);
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string text = TextEncr.Text;
-            string key = Key.Text;
-
-            var pad = new vernama(aText);
-            string encrypt = pad.Crypt(text, key, true);
-            Steganohrap(encrypt);
-            
-        }
+        
 
         private void Steganohrap(string rText)
         {
@@ -344,6 +358,32 @@ namespace Steganography
 
             string m = Encoding.GetEncoding(1251).GetString(rez);
             return Convert.ToInt32(m, 10);
+        }
+
+        private void Encrip_Click(object sender, EventArgs e)
+        {
+            string text = TextEncr.Text;
+            string key = Key.Text;
+
+            if (bPic == null)
+            {
+                MessageBox.Show("Вы не загрузили картинку", "Оповищение", MessageBoxButtons.OK);
+            }
+            else if (text == "")
+            {
+                MessageBox.Show("Вы не ввели сообщение", "Оповищение", MessageBoxButtons.OK);
+                TextEncr.Focus();
+            }
+            else if (key == "")
+            {
+                MessageBox.Show("Вы не сгенерировали ключ", "Оповищение", MessageBoxButtons.OK);
+            }
+            else
+            {
+                var pad = new vernama(aText);
+                string encrypt = pad.Crypt(text, key, true);
+                Steganohrap(encrypt);
+            } 
         }
     
 

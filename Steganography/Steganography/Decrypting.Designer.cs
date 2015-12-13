@@ -40,6 +40,8 @@
             this.MainScreenbut = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.Help2 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             ((System.ComponentModel.ISupportInitialize)(this.Img)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +77,7 @@
             // 
             this.Key.Location = new System.Drawing.Point(681, 187);
             this.Key.Name = "Key";
+            this.Key.ReadOnly = true;
             this.Key.Size = new System.Drawing.Size(304, 20);
             this.Key.TabIndex = 8;
             // 
@@ -171,6 +174,26 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // Help2
+            // 
+            this.Help2.BackgroundImage = global::Steganography.Properties.Resources.help;
+            this.Help2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Help2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Help2.Location = new System.Drawing.Point(954, 5);
+            this.Help2.Name = "Help2";
+            this.Help2.Size = new System.Drawing.Size(37, 31);
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.Help2});
+            this.shapeContainer1.Size = new System.Drawing.Size(995, 567);
+            this.shapeContainer1.TabIndex = 15;
+            this.shapeContainer1.TabStop = false;
+            // 
             // Decrypting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +211,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.OpenImg);
             this.Controls.Add(this.Img);
+            this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Decrypting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -213,5 +237,7 @@
         private System.Windows.Forms.Button MainScreenbut;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape Help2;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
     }
 }

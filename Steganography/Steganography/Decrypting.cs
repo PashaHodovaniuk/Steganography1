@@ -81,10 +81,21 @@ namespace Steganography
         {
             string key = Key.Text;
             string text;
-            text = Dsteganograp();
-            var pad = new vernama(aText);
-            string encrypt = pad.Crypt(text, key, false);
-            TextEncr.Text = encrypt;
+            if (bPic == null)
+            {
+                MessageBox.Show("Вы не загрузили картинку", "Оповищение", MessageBoxButtons.OK);
+            }
+            else if (key == "")
+            {
+                MessageBox.Show("Вы не загрузили ключ", "Оповищение", MessageBoxButtons.OK);
+            }
+            else
+            {
+                text = Dsteganograp();
+                var pad = new vernama(aText);
+                string encrypt = pad.Crypt(text, key, false);
+                TextEncr.Text = encrypt;
+            }
         }
 
         private string Dsteganograp()

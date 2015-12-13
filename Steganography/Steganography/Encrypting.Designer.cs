@@ -37,7 +37,7 @@
             this.Key = new System.Windows.Forms.TextBox();
             this.ClearKey = new System.Windows.Forms.Button();
             this.SaveKey = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Encrip = new System.Windows.Forms.Button();
             this.SaveImg = new System.Windows.Forms.Button();
             this.Exiting = new System.Windows.Forms.Button();
             this.MainScreenBut = new System.Windows.Forms.Button();
@@ -47,7 +47,6 @@
             this.EndSize = new System.Windows.Forms.Label();
             this.Help1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.Img)).BeginInit();
@@ -166,18 +165,18 @@
             this.SaveKey.UseVisualStyleBackColor = false;
             this.SaveKey.Click += new System.EventHandler(this.SaveKey_Click);
             // 
-            // button1
+            // Encrip
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(681, 378);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(302, 49);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Шифровка";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Encrip.BackColor = System.Drawing.Color.Transparent;
+            this.Encrip.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Encrip.ForeColor = System.Drawing.Color.Red;
+            this.Encrip.Location = new System.Drawing.Point(681, 378);
+            this.Encrip.Name = "Encrip";
+            this.Encrip.Size = new System.Drawing.Size(302, 49);
+            this.Encrip.TabIndex = 9;
+            this.Encrip.Text = "Шифровка";
+            this.Encrip.UseVisualStyleBackColor = false;
+            this.Encrip.Click += new System.EventHandler(this.Encrip_Click);
             // 
             // SaveImg
             // 
@@ -269,9 +268,9 @@
             this.Help1.BackgroundImage = global::Steganography.Properties.Resources.help;
             this.Help1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Help1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Help1.Location = new System.Drawing.Point(478, 266);
+            this.Help1.Location = new System.Drawing.Point(952, 1);
             this.Help1.Name = "Help1";
-            this.Help1.Size = new System.Drawing.Size(39, 34);
+            this.Help1.Size = new System.Drawing.Size(39, 33);
             // 
             // shapeContainer1
             // 
@@ -279,20 +278,10 @@
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.ovalShape1,
             this.Help1});
             this.shapeContainer1.Size = new System.Drawing.Size(995, 567);
             this.shapeContainer1.TabIndex = 17;
             this.shapeContainer1.TabStop = false;
-            // 
-            // ovalShape1
-            // 
-            this.ovalShape1.BackgroundImage = global::Steganography.Properties.Resources.help;
-            this.ovalShape1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ovalShape1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ovalShape1.Location = new System.Drawing.Point(962, 3);
-            this.ovalShape1.Name = "ovalShape1";
-            this.ovalShape1.Size = new System.Drawing.Size(34, 29);
             // 
             // openFileDialog1
             // 
@@ -313,7 +302,7 @@
             this.Controls.Add(this.Exiting);
             this.Controls.Add(this.MainScreenBut);
             this.Controls.Add(this.SaveImg);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Encrip);
             this.Controls.Add(this.SaveKey);
             this.Controls.Add(this.ClearKey);
             this.Controls.Add(this.Key);
@@ -346,7 +335,7 @@
         private System.Windows.Forms.TextBox Key;
         private System.Windows.Forms.Button ClearKey;
         private System.Windows.Forms.Button SaveKey;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Encrip;
         private System.Windows.Forms.Button SaveImg;
         private System.Windows.Forms.Button Exiting;
         private System.Windows.Forms.Button MainScreenBut;
@@ -356,7 +345,6 @@
         private System.Windows.Forms.Label EndSize;
         private Microsoft.VisualBasic.PowerPacks.OvalShape Help1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
